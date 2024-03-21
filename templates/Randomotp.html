@@ -1,0 +1,33 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Otp</title>
+</head>
+<body>
+{% block body %}
+<div class="container text-center">
+  <div class="row">
+    <div class="col order-last">
+        <div><h1>Welcome to Jaswanth's Travel Tourism and Management</h1>
+    <form method="post" action="{%url 'Randomotp' %}">
+        {% csrf_token%}
+        <label>Enter Text:</label>
+        <input type="text" name="Input1" required>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+
+    </div>
+    <div class="col">
+      <h1>Top Destinations</h1>
+        <br><h1>Generated OTP:{{ result_str }}</h1>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email</title>
+</head>
+<body>
+    <h2>Send Email</h2>
+    <form action="{% url 'send_email' %}" method="POST">
+        {% csrf_token %}
+        <label for="sender_email">Your Email:</label><br>
+        <input type="email" id="sender_email" name="sender_email" required><br><br>
+
+        <label for="recipient_email">Recipient's Email:</label><br>
+        <input type="email" id="recipient_email" name="recipient_email" required><br><br>
+
+        <label for="subject">Subject:</label><br>
+        <input type="text" id="subject" name="subject" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+
+        <input type="submit" value="Send Email">
+    </form>
+</body>
+</html>
+
+
+
+
